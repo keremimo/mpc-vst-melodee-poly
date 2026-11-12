@@ -8,8 +8,9 @@ screen page, Q-Link pages and factory presets in MPC's PRESET menu.
 It is Melodee's PROPHET engine, out of Melodee as a plug-in of its own: the same voice to the sample (see
 "Where it comes from").
 
-**Status: 1.0.0, not released.** The engine passes its host checks; the device builds, the skin and the MPC
-smoke test (docs/RELEASING.md in mpc-vst-plugins) are still to do. `tested.json` lists no device yet.
+**Status: 1.0.0, not released.** The engine passes its host checks, and the armv7 and aarch64 builds, their skin
+and the toolchain's port test (`tools/test_port.sh`) pass; the smoke test on an MPC (docs/RELEASING.md in
+mpc-vst-plugins) is still to do. `tested.json` lists no device yet.
 
 ## What it is
 
@@ -73,7 +74,9 @@ this repository (or named by `MPC_VST`), and Docker:
 vst/build.sh            # armv7 and aarch64: vst/build/melodee_poly.so, vst/build/aarch64/melodee_poly.so, the skin
 ```
 
-`vst/build.sh` calls the toolchain's `tools/build_port.sh` with `vst/vst.json`: the skin from `vst/layout.conf`,
+`vst/build.sh` calls the toolchain's `tools/build_port.sh` with `vst/vst.json`: the skin from `vst/layout.conf`, its
+artwork drawn in a browser (`"art": "html"`, the toolchain's `mpc-vst-html-art` image) in Melodee's Rubik
+(`vst/skin.css`, `vst/fonts/`),
 `params.h` from `vst/params.json`, the presets from `vst/presets.json` and the `.so` linked with the toolchain's
 VST2 wrapper (44.1 kHz, sample-accurate notes). Then `tools/test_port.sh vst/vst.json` (the wrapper's own host
 test), a CPU bench and `tools/release.py` make the `-mpc-armv7.zip` and `-mpc-aarch64.zip` (the toolchain's
@@ -112,4 +115,5 @@ made for it.
 ## Licence and credit
 
 AGPL-3.0-only (`LICENSE`). Melodee Poly is the work of Kerem Kiliç (Ellic Studio), from Melodee. The Open MPC
-toolchain and its VST2 wrapper, which the build links, are sd88me's (MIT).
+toolchain and its VST2 wrapper, which the build links, are sd88me's (MIT). Rubik (`vst/fonts/Rubik-VF.ttf`, the
+skin's typeface) is The Rubik Project Authors', under the SIL Open Font License 1.1 (`vst/fonts/OFL.txt`).

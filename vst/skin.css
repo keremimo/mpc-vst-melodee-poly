@@ -1,0 +1,17 @@
+/* Melodee's look on the MPC page (tools/html_art/default.css in mpc-vst-plugins is the base): Rubik, the typeface
+ * of Melodee's own screens (OFL, vst/fonts/OFL.txt), for the drawn text; MPC draws the live names and values in its
+ * own font on top. Colours come from vst/layout.conf's theme_* lines (Melodee's NIGHT palette). */
+@font-face { font-family: "Rubik"; font-weight: 300 900; src: url("fonts/Rubik-VF.ttf"); }
+
+:root {
+  --font: "Rubik", "Titillium Web", sans-serif;
+  --title-font: "Rubik", "Titillium Web", sans-serif;
+  --title-size: 17px;
+  --label-size: 14px;
+  --seg-size: 14px;
+  --radius: 8px;
+  --sheen: 0.04;
+}
+
+text { font-weight: 500; }
+.frame-title { font-weight: 600; letter-spacing: 0.08em; fill: var(--accent); }
