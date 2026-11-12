@@ -1,0 +1,19 @@
+{
+  "name": "Melodee Poly",
+  "vendor": "Ellic Studio",
+  "uid": "MdPl",
+  "version": 1000,
+  "so": "melodee_poly.so",
+  "targets": ["armv7", "aarch64"],
+  "params": "params.json",
+  "presets": "presets.json",
+  "layout": "layout.conf",
+  "defines": {"SAMPLE_ACCURATE": 1},
+  "build": {
+    "root": "..",
+    "sources": ["src/plugin.cpp", "src/poly.cpp"],
+    "cflags": ["-Isrc", "-O2", "-std=gnu++17", "-ffast-math", "-fno-finite-math-only"],
+    "cflags_arm": ["-mcpu=cortex-a17", "-mfpu=neon-vfpv4"],
+    "libs": ["-lm"]
+  }
+}
