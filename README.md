@@ -8,9 +8,9 @@ screen page, Q-Link pages and factory presets in MPC's PRESET menu.
 It is Melodee's PROPHET engine, out of Melodee as a plug-in of its own: the same voice to the sample (see
 "Where it comes from").
 
-**Status: 1.0.0, not released.** The engine passes its host checks, and the armv7 and aarch64 builds, their skin
-and the toolchain's port test (`tools/test_port.sh`) pass; the smoke test on an MPC (docs/RELEASING.md in
-mpc-vst-plugins) is still to do. `tested.json` lists no device yet.
+**Status: 1.0.0.** The engine passes its host checks, and the armv7 and aarch64 builds, their skin and the
+toolchain's port test (`tools/test_port.sh`) pass. The aarch64 build is tested in Melodee on the MPC Sample. It
+has not been tested on an MPC OS device yet: `tested.json` lists none.
 
 ## What it is
 
@@ -98,8 +98,8 @@ made from it. Parameters only ever go on the end (projects and skins bind by ind
 
 - **MPC OS (Gen1, Gen2):** the release zips carry their own `install.sh` and `INSTALL.md` (root SSH; the
   toolchain's installer app, Plugin Manager VST or `mpc-store.sh` install them too).
-- **Melodee on the MPC Sample:** copy the plug-in folder (`Ellic Studio - VST - Melodee Poly`, from the
-  aarch64 zip's `portable/`) into `Plugins/` at the top of the SD card. Melodee plays it on a PLUGIN track, and a
+- **Melodee on the MPC Sample:** download `Melodee-Poly-1.0.0-mpc-sample.zip` from the release, unzip it and copy the
+  plug-in folder inside (`Ellic Studio - VST - Melodee Poly`) into `Plugins/` at the top of the SD card. Melodee plays it on a PLUGIN track, and a
   project saved with Melodee's built-in PROPHET engine (Melodee 0.1.0-alpha.6 and before) opens with that track
   on Melodee Poly, as it sounded.
 
